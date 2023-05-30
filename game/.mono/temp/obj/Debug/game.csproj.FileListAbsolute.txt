@@ -1,0 +1,9 @@
+D:\game\.mono\temp\bin\Debug\game.dll
+D:\game\.mono\temp\bin\Debug\game.pdb
+D:\game\.mono\temp\obj\Debug\game.csproj.AssemblyReference.cache
+D:\game\.mono\temp\obj\Debug\game.GeneratedMSBuildEditorConfig.editorconfig
+D:\game\.mono\temp\obj\Debug\game.AssemblyInfoInputs.cache
+D:\game\.mono\temp\obj\Debug\game.AssemblyInfo.cs
+D:\game\.mono\temp\obj\Debug\game.csproj.CoreCompileInputs.cache
+D:\game\.mono\temp\obj\Debug\game.dll
+D:\game\.mono\temp\obj\Debug\game.pdb
