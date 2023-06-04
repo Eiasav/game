@@ -16,65 +16,64 @@ public class player_movement : KinematicBody2D
         right
     }; 
 
-    private AnimatedSprite _animRun_right;
-    private AnimatedSprite _animIdl_right;
-    private AnimatedSprite _animIdl_left;
-    private AnimatedSprite _animRun_left;
-    private AnimatedSprite _anim_TakeDamage;
-    private AnimatedSprite _anim_Die;
+    private AnimatedSprite _anim;
 
     private Direction direction = Direction.left;
 
+    public delegate void Death();
+
     public override void _Ready()
     {
-        _animIdl_right = GetNode<AnimatedSprite>("AnimatedSprite");
-        _animRun_right = GetNode<AnimatedSprite>("AnimatedSprite");
-        _animIdl_left = GetNode<AnimatedSprite>("AnimatedSprite");
-        _animRun_left = GetNode<AnimatedSprite>("AnimatedSprite");
-        _anim_TakeDamage = GetNode<AnimatedSprite>("AnimatedSprite");
-        _anim_Die = GetNode<AnimatedSprite>("AnimatedSprite");
+        _anim = GetNode<AnimatedSprite>("AnimatedSprite");
+
+        GameManager.player_Movement = this;
     }
 
     public override void _Process(float delta)
     {
         float moveAmount = speed * delta;
         Vector2 moveVector = new Vector2(0, 0);
-        if (Input.IsActionPressed("up"))
+        if (health > 0)
         {
-            moveVector.y -= moveAmount;
-        }
-        if (Input.IsActionPressed("down"))
-        {
-            moveVector.y += moveAmount;
-        }
-
-        if (Input.IsActionPressed("left"))
-        {
-            moveVector.x -= moveAmount;
-            _animRun_left.Play("run_left");
-            direction = Direction.left;
-        }
-
-        if (Input.IsActionPressed("right"))
-        {
-            moveVector.x += moveAmount;
-            _animRun_right.Play("run_right");
-            direction = Direction.right;
-        }
-
-        if (!Input.IsActionPressed("left") && !Input.IsActionPressed("right"))
-        {
-            if (direction != Direction.left)
+            if (Input.IsActionPressed("up"))
             {
-                _animIdl_left.Play("idl_right");
+                moveVector.y -= moveAmount;
             }
-            else
+            if (Input.IsActionPressed("down"))
             {
-                _animIdl_right.Play("idl_left");
+                moveVector.y += moveAmount;
             }
+
+            if (Input.IsActionPressed("left"))
+            {
+                moveVector.x -= moveAmount;
+                _anim.Play("run_left");
+                direction = Direction.left;
+            }
+
+            if (Input.IsActionPressed("right"))
+            {
+                moveVector.x += moveAmount;
+                _anim.Play("run_right");
+                direction = Direction.right;
+            }
+
+
+            if (!Input.IsActionPressed("left") && !Input.IsActionPressed("right"))
+            {
+                if (direction != Direction.left)
+                {
+                    _anim.Play("idl_right");
+                }
+                else
+                {
+                    _anim.Play("idl_left");
+                }
+            }
+            Position += moveVector;
+            MoveAndCollide(moveVector);
         }
 
-        Position += moveVector;
 
         if (mana < 100 && manaTimer <= 0)
         {
@@ -102,12 +101,12 @@ public class player_movement : KinematicBody2D
 
     private void InterWithItems(Node obj)
     {
-        if (obj is PickUp)
+        if (obj.Owner is PickUp)
         {
-            if (obj is MagicPotion)
+            if (obj.Owner is MagicPotion)
             {
-                MagicPotion potion = obj as MagicPotion;
-                
+                MagicPotion potion = obj.Owner as MagicPotion;
+                potion.Use();
             }
         }
     }
@@ -117,12 +116,29 @@ public class player_movement : KinematicBody2D
         GD.Print("Player has taken damage");
         health -= 5;
         GD.Print("Current health " + health);
-        _anim_TakeDamage.Play("take_damage");
+        _anim.Play("take_damage");
         if (health <= 0)
         {
             health = 0;
             GD.Print("Player has died!");
-            _anim_Die.Play("die");
+            _anim.Play("die");
         }
+    }
+
+    private void _on_AnimatedSprite_animation_finished()
+    {
+        if (_anim.Animation == "die")
+        {
+            _anim.Stop();
+            Hide();
+            GD.Print("Anim finished");
+            EmitSignal(nameof(Death));
+        }
+    }
+
+    public void RespawnPlayer()
+    {
+        Show();
+        health = 10;
     }
 }

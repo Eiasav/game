@@ -7,3 +7,12 @@ D:\game\.mono\temp\obj\Debug\game.AssemblyInfo.cs
 D:\game\.mono\temp\obj\Debug\game.csproj.CoreCompileInputs.cache
 D:\game\.mono\temp\obj\Debug\game.dll
 D:\game\.mono\temp\obj\Debug\game.pdb
+D:\dev\repos\game\game\game\.mono\temp\bin\Debug\game.dll
+D:\dev\repos\game\game\game\.mono\temp\bin\Debug\game.pdb
+D:\dev\repos\game\game\game\.mono\temp\obj\Debug\game.csproj.AssemblyReference.cache
+D:\dev\repos\game\game\game\.mono\temp\obj\Debug\game.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\repos\game\game\game\.mono\temp\obj\Debug\game.AssemblyInfoInputs.cache
+D:\dev\repos\game\game\game\.mono\temp\obj\Debug\game.AssemblyInfo.cs
+D:\dev\repos\game\game\game\.mono\temp\obj\Debug\game.csproj.CoreCompileInputs.cache
+D:\dev\repos\game\game\game\.mono\temp\obj\Debug\game.dll
+D:\dev\repos\game\game\game\.mono\temp\obj\Debug\game.pdb

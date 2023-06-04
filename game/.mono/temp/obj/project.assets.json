@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\game\\game.csproj",
+      "projectUniqueName": "D:\\DEV\\REPOS\\GAME\\GAME\\GAME\\game.csproj",
       "projectName": "game",
-      "projectPath": "D:\\game\\game.csproj",
+      "projectPath": "D:\\DEV\\REPOS\\GAME\\GAME\\GAME\\game.csproj",
       "packagesPath": "C:\\Users\\Selyan\\.nuget\\packages\\",
-      "outputPath": "D:\\game\\.mono\\temp\\obj\\",
+      "outputPath": "D:\\dev\\repos\\game\\game\\game\\.mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\Selyan\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
