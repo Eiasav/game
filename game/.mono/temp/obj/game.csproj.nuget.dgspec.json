@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DEV\\REPOS\\GAME\\GAME\\GAME\\game.csproj": {}
+    "D:\\dev\\repos\\game\\game\\game\\game.csproj": {}
   },
   "projects": {
-    "D:\\DEV\\REPOS\\GAME\\GAME\\GAME\\game.csproj": {
+    "D:\\dev\\repos\\game\\game\\game\\game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DEV\\REPOS\\GAME\\GAME\\GAME\\game.csproj",
+        "projectUniqueName": "D:\\dev\\repos\\game\\game\\game\\game.csproj",
         "projectName": "game",
-        "projectPath": "D:\\DEV\\REPOS\\GAME\\GAME\\GAME\\game.csproj",
+        "projectPath": "D:\\dev\\repos\\game\\game\\game\\game.csproj",
         "packagesPath": "C:\\Users\\Selyan\\.nuget\\packages\\",
         "outputPath": "D:\\dev\\repos\\game\\game\\game\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/GameManager.cs" type="Script" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://MagicPotion.tscn" type="PackedScene" id=7]
 [ext_resource path="res://HealthPotion.tscn" type="PackedScene" id=8]
 [ext_resource path="res://RespawnPoint.tscn" type="PackedScene" id=9]
+[ext_resource path="res://smalldemon.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -799,3 +800,6 @@ position = Vector2( -129, -126 )
 position = Vector2( 32, -168 )
 
 [node name="RespawnPoint" parent="." instance=ExtResource( 9 )]
+
+[node name="smalldemon" parent="." instance=ExtResource( 10 )]
+position = Vector2( 61, -75 )
